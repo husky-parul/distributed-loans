@@ -1,27 +1,30 @@
 /**
  * Sample business network definition.
  */
+
 namespace org.acme.dloans
 
 
 
 participant Users identified by id {
   o String id
-  o String firstName
-  o String lastName
-  o String address
-  o Double assetWorth
-  o Double rating
-  o Double walletAmt
+  o String firstName 
+  o String lastName optional
+  o String address optional
+  o Double assetWorth optional
+  o Double rating optional
+  o Double walletAmt optional
   
 }
 
 participant LegalAdvisor identified by id {
   o String id
-  o String firstName
-  o String lastName
-  o Double walletAmount
+  o String firstName 
+  o String lastName optional
+  o Double wallet optional
   o Loans[] loansApproved
+  o Double walletAmt optional
+  
 }
 
 asset Loans identified by id{
@@ -29,34 +32,46 @@ asset Loans identified by id{
   o Double loanAmt
   o Double outstandingAmt
   o Users borrower
-  o Users[] lenders
-  o Double premiuim
-  o DateTime startDate
-  o DateTime endDate
-  o LoanStatus status
-  o LegalAdvisor legalAdvisor
+  o Users[] lenders optional
+  o Double premiuim optional
+  o DateTime startDate optional
+  o DateTime endDate optional
+  o LoanStatus status optional
+  o String documents optional
+  o String comments optional
+  
 }
 
-asset Lending identified by id{
-  o String id
-  o Double amtPerCycle
-  o Double amtLent
-  o Users borrower
-  o Users lenders
-  o DateTime startDate
-  o DateTime endDate
-  o LoanStatus status
-  o LegalAdvisor legalAdvisor
-}
-
-/**
-* An enumerated type
-*/
 enum LoanStatus {
 o ontrack
 o deliquient
-o alerted
+o alertState
+o approved
+o sanctioned
+o incompleteFunds
 }
 
 
+transaction LoanApplication{
+  o String documents
+  o String borrower
+  o Double amt
+  o String id
+}
+
+transaction LoanVerification{
+  o String comments
+  o LoanStatus status
+  o String id
+}
+
+transaction SendNotification{
+
+}
+
+transaction PoolMoney{
+  o String id
+  o Double amtPooled
+  o Double percentage
+}
 

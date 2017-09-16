@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 // import { TransactionComponent } from './Transaction/Transaction.component'
 
 import { LoansComponent } from './Loans/Loans.component';
+import { UsersComponent } from './Users/Users.component';
+import { LegalAdvisorComponent } from './LegalAdvisor/LegalAdvisor.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LoansComponent } from './Loans/Loans.component';
 		HomeComponent,
     // TransactionComponent,
     
-    LoansComponent
+    LoansComponent,
+    UsersComponent,
+    LegalAdvisorComponent
 		
   ],
   imports: [

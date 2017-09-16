@@ -1,0 +1,6 @@
+query unsanctionedLoans {
+  description: "Select all loans which are not sanctioned"
+  statement:
+      SELECT org.acme.dloans.Loans
+        WHERE (outstandingAmt < 100)
+}

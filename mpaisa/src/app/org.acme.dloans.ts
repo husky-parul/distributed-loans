@@ -12,6 +12,13 @@ import {Event} from './org.hyperledger.composer.system';
       rating: number;
       walletAmt: number;
    }
+   export class LegalAdvisor extends Participant {
+      id: string;
+      firstName: string;
+      lastName: string;
+      walletAmount: number;
+      loansApproved: Loans[];
+   }
    export class Loans extends Asset {
       id: string;
       loanAmt: number;

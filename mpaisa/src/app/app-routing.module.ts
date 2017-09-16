@@ -5,11 +5,19 @@ import { HomeComponent } from './home/home.component';
 
 import { LoansComponent } from './Loans/Loans.component';
 
+import { UsersComponent } from './Users/Users.component';
+
+import { LegalAdvisorComponent } from './LegalAdvisor/LegalAdvisor.component';
+
 const routes: Routes = [
     // { path: 'transaction', component: TransactionComponent },
     {path: '', component: HomeComponent},
 		
-		{ path: 'Loans', component: LoansComponent},
+    { path: 'Loans', component: LoansComponent},
+    
+    { path: 'Users', component: UsersComponent},
+
+    { path: 'LegalAdvisor', component: LegalAdvisorComponent},
 		
 		{path: '**', redirectTo:''}
 

@@ -7,7 +7,7 @@ import { Configuration }     from './configuration';
 import { DataService }     from './data.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-// import { TransactionComponent } from './Transaction/Transaction.component'
+import { PoolMoneyComponent } from './PoolMoney/PoolMoney.component'
 
 import { LoansComponent } from './Loans/Loans.component';
 import { UsersComponent } from './Users/Users.component';
@@ -17,7 +17,7 @@ import { LegalAdvisorComponent } from './LegalAdvisor/LegalAdvisor.component';
   declarations: [
     AppComponent,
 		HomeComponent,
-    // TransactionComponent,
+    PoolMoneyComponent,
     
     LoansComponent,
     UsersComponent,

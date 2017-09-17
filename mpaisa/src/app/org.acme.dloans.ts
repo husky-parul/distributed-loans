@@ -35,4 +35,11 @@ import {Event} from './org.hyperledger.composer.system';
       deliquient,
       alerted,
    }
+
+   export class PoolMoney extends Transaction {
+      id: string;
+      amtPooled: number;
+      percentage: number;
+     
+   }
 // }

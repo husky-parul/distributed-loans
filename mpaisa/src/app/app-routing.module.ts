@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { TransactionComponent } from './Transaction/Transaction.component'
+import { PoolMoneyComponent } from './PoolMoney/PoolMoney.component'
 import { HomeComponent } from './home/home.component';
 
 import { LoansComponent } from './Loans/Loans.component';
@@ -18,6 +18,7 @@ const routes: Routes = [
     { path: 'Users', component: UsersComponent},
 
     { path: 'LegalAdvisor', component: LegalAdvisorComponent},
+    { path: 'PoolMoney', component: PoolMoneyComponent},
 		
 		{path: '**', redirectTo:''}
 

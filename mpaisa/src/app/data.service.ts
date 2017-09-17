@@ -61,6 +61,15 @@ export class DataService<Type> {
           .catch(this.handleError);
     }
 
+    public poolMoney(ns: string,itemToUpdate: Type): Observable<Type> {
+        console.log('CreateApplication ' + ns);
+        console.log('what is the updated item?', itemToUpdate);
+        console.log('what is the updated item?', JSON.stringify(itemToUpdate));
+        return this.http.post(`${this.actionUrl}${ns}/`, itemToUpdate)
+          .map(this.extractData)
+          .catch(this.handleError);
+    }
+
     private handleError(error: any): Observable<string> {
         // In a real world app, we might use a remote logging infrastructure
         // We'd also dig deeper into the error to get a better message

@@ -234,6 +234,55 @@
 </div>
 
 
+
+<div class="modal fade" id="payDayModal" tabindex="-1" role="dialog" aria-labelledby="payDayModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="payDayModalLabel">Pay Premuim</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+          
+             <div class="form-group text-left">
+              <label for="id">id</label>
+
+              
+                <input [ngModel]="id" formControlName="id" type="text" class="form-control">
+              
+
+            </div>
+          
+            
+          
+            
+          
+            <div class="form-group text-left">
+              <label for="premiuim">premiuim</label>
+
+              
+                <input [ngModel]="premiuim" formControlName="premiuim" type="number" class="form-control">
+              
+
+            </div>
+          
+            
+
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="payPremuim(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -327,7 +376,10 @@
                 <td>{{asset.payDay}}</td>
             
             <td>
+              <button (click)="getForm(asset.id);" type="button" class="btn btn-success" data-toggle="modal" data-target="#payDayModal">Pay Premium</button>
               <button (click)="getForm(asset.id);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>
+
+
               <button (click)="setId(asset.id);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAssetModal">Delete Asset</button>
             </td>
           </tr>

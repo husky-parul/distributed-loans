@@ -39,7 +39,7 @@ export class LoansService {
 
     public payPremium(itemToUpdate: any): Observable<Loans> {
       console.log('Pay: '+itemToUpdate);
-      return this.dataService.payPremium('PayPremuim', itemToUpdate);
+      return this.dataService.payPremium('PayPremium', itemToUpdate);
     }
 
 }

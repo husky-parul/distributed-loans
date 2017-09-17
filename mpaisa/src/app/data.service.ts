@@ -73,8 +73,16 @@ export class DataService<Type> {
   
       public payPremium(ns: string, itemToUpdate: Type): Observable<Type> {
         console.log('Update ' + ns);
-        console.log('what is the updated item?', itemToUpdate);
-        console.log('what is the updated item?', JSON.stringify(itemToUpdate));
+        console.log('witemToUpdate?', itemToUpdate);
+        console.log('what is the payPremium item?', JSON.stringify(itemToUpdate));
+        var t=JSON.stringify(itemToUpdate);
+        t=t.replace("Loans", "PayPremium");
+        console.log('repl: ',t);
+        itemToUpdate=JSON.parse(t);
+        
+        console.log('witemToUpdate 2?', itemToUpdate);
+        console.log('what is the payPremium item 2?', JSON.stringify(itemToUpdate));
+        console.log(`${this.actionUrl}${ns}/`,itemToUpdate);
         return this.http.post(`${this.actionUrl}${ns}/`, itemToUpdate)
           .map(this.extractData)
           .catch(this.handleError);
@@ -94,6 +102,7 @@ export class DataService<Type> {
     }
 
     private extractData(res: Response): any {
+        console.log('000000: ',res);
         return res.json();
     }
 

@@ -13,7 +13,7 @@ participant Users identified by id {
   o String address optional
   o Double assetWorth optional
   o Double rating optional
-  o Double walletAmt optional
+  o Double wallet optional
   o String password
   
 }
@@ -24,7 +24,7 @@ participant LegalAdvisor identified by id {
   o String lastName optional
   o Double wallet optional
   o Loans[] loansApproved 
-  o Double walletAmt optional
+
   
 }
 
@@ -33,7 +33,7 @@ asset Loans identified by id{
   o Double loanAmt
   o Double outstandingAmt
   o Users borrower
-  o Users[] lenders optional
+  o String[] lenders optional
   o Double premiuim optional
   o DateTime startDate optional
   o DateTime endDate optional
@@ -81,7 +81,7 @@ transaction PoolMoney{
 
 transaction PayPremium{
   o String id
-  o Double amt
+  o Double premiuim
   
 }
 

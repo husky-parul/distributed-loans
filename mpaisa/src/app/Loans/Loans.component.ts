@@ -341,19 +341,12 @@ payPremuim(form: any): Promise<any> {
     
     };
 
-    this.myForm.setValue({
-      "premiuim":null
-      
-    });
-
+ 
     return this.serviceLoans.payPremium(this.asset)
     .toPromise()
     .then(() => {
 			this.errorMessage = null;
-      this.myForm.setValue({
-        "premiuim":null
       
-      });
     })
     .catch((error) => {
         if(error == 'Server error'){

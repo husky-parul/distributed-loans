@@ -35,6 +35,7 @@ export class LoansComponent implements OnInit {
       endDate = new FormControl("", Validators.required);
   
       status = new FormControl("", Validators.required);
+      payDay = new FormControl("", Validators.required);
   
 
 
@@ -74,7 +75,8 @@ export class LoansComponent implements OnInit {
         
     
         
-          status:this.status
+          status:this.status,
+          payDay:this.payDay
         
     
     });
@@ -146,7 +148,8 @@ export class LoansComponent implements OnInit {
         
       
         
-          "status":this.status.value
+          "status":this.status.value,
+          "payDay":this.payDay.value,
         
       
     };
@@ -186,7 +189,9 @@ export class LoansComponent implements OnInit {
         
       
         
-          "status":null
+          "status":null,
+          "payDay":null,
+          
         
       
     });
@@ -230,7 +235,9 @@ export class LoansComponent implements OnInit {
         
       
         
-          "status":null 
+          "status":null,
+          "payDay":null,
+          "premuim":null
         
       
       });
@@ -298,7 +305,8 @@ export class LoansComponent implements OnInit {
     
         
           
-            "status":this.status.value
+            "status":this.status.value,
+            "payDay":this.payDay.value
           
         
     
@@ -319,6 +327,41 @@ export class LoansComponent implements OnInit {
 			else{
 				this.errorMessage = error;
 			}
+    });
+  }
+
+payPremuim(form: any): Promise<any> {
+
+    this.asset = {
+      $class: "org.acme.dloans.Loans",
+        "id":this.id.value,
+          
+          "premiuim":this.premiuim.value
+         
+    
+    };
+
+    this.myForm.setValue({
+      "premiuim":null
+      
+    });
+
+    return this.serviceLoans.payPremium(this.asset)
+    .toPromise()
+    .then(() => {
+			this.errorMessage = null;
+      this.myForm.setValue({
+        "premiuim":null
+      
+      });
+    })
+    .catch((error) => {
+        if(error == 'Server error'){
+            this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+        }
+        else{
+            this.errorMessage = "error in else: "+error;
+        }
     });
   }
 
@@ -388,7 +431,8 @@ export class LoansComponent implements OnInit {
           
         
           
-            "status":null 
+            "status":null,
+            "payDay":null
           
         
       };
@@ -449,6 +493,12 @@ export class LoansComponent implements OnInit {
         }else{
           formObject.status = null;
         }
+
+         if(result.payDay){
+          formObject.payDay = result.payDay;
+        }else{
+          formObject.status = null;
+        }
       
 
       this.myForm.setValue(formObject);
@@ -504,7 +554,8 @@ export class LoansComponent implements OnInit {
         
       
         
-          "status":null 
+          "status":null ,
+          "payDay":null
         
       
       });

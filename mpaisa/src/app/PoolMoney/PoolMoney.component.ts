@@ -22,6 +22,8 @@ export class PoolMoneyComponent implements OnInit {
       id = new FormControl("", Validators.required);
       amtPooled = new FormControl("", Validators.required);
       percentage= new FormControl("", Validators.required);
+      password=new FormControl("", Validators.required);
+      lenderId=new FormControl("", Validators.required);
      
 
   constructor(private serviceApplication:PoolMoneyService, fb: FormBuilder) {
@@ -29,7 +31,9 @@ export class PoolMoneyComponent implements OnInit {
     
           id:this.id,
           amtPooled:this.amtPooled,
-          percentage:this.percentage
+          percentage:this.percentage,
+          password:this.password,
+          lenderId:this.lenderId
         
     });
   };
@@ -72,7 +76,9 @@ poolMoney(form: any): Promise<any> {
       $class: "org.acme.dloans.PoolMoney",
           "id":this.id.value,
           "amtPooled":this.amtPooled.value,
-          "percentage":this.percentage.value
+          "percentage":this.percentage.value,
+           "password":this.password.value,
+           "lenderId":this.lenderId.value
         
     
     };
@@ -82,7 +88,9 @@ poolMoney(form: any): Promise<any> {
         
           "id":null,
           "amtPooled":null,
-          "percentage":null
+          "percentage":null,
+           "password":null,
+           "lenderId":null
       
     });
 
@@ -95,7 +103,9 @@ poolMoney(form: any): Promise<any> {
         
           "id":null,
           "amtPooled":null,
-          "percentage":null
+          "percentage":null,
+          "password":null,
+          "lenderId":null
         
       
       
@@ -118,7 +128,9 @@ poolMoney(form: any): Promise<any> {
 
       "id":null,
       "amtPooled":null,
-      "percentage":null
+      "percentage":null,
+      "password":null,
+      "lenderId":null
       
       });
   }

@@ -23,7 +23,7 @@
               <label for="firstName">firstName</label>
 
               
-                <input formControlName="firstName" type="number" step='any' class="form-control">
+                <input formControlName="firstName" type="text"  class="form-control">
               
 
             </div>
@@ -32,7 +32,16 @@
               <label for="lastName">lastName</label>
 
               
-                <input formControlName="lastName" type="number" step='any' class="form-control">
+                <input formControlName="lastName" type="text" class="form-control">
+              
+
+            </div>
+
+            <div class="form-group text-left">
+              <label for="password">password</label>
+
+              
+                <input formControlName="password" type="password" class="form-control">
               
 
             </div>
@@ -51,7 +60,7 @@
               <label for="assetWorth">assetWorth</label>
 
               
-                  <textarea formControlName="assetWorth" class="form-control" rows="3"></textarea>
+                  <textarea formControlName="assetWorth" type="number" class="form-control" rows="3"></textarea>
 
               
 
@@ -61,7 +70,7 @@
               <label for="rating">rating</label>
 
               
-                <input formControlName="rating" type="number" step='any' class="form-control">
+                <input formControlName="rating" type="number"  class="form-control">
               
 
             </div>
@@ -70,7 +79,7 @@
               <label for="walletAmt">walletAmt</label>
 
               
-                <input formControlName="walletAmt" type="text" class="form-control">
+                <input formControlName="walletAmt" type="number" class="form-control">
               
 
             </div>
@@ -114,7 +123,7 @@
               <label for="firstName">firstName</label>
 
               
-                <input [ngModel]="firstName" formControlName="firstName" type="number" step='any' class="form-control">
+                <input [ngModel]="firstName" formControlName="firstName" type="text"  class="form-control">
               
 
             </div>
@@ -123,7 +132,16 @@
               <label for="lastName">lastName</label>
 
               
-                <input [ngModel]="lastName" formControlName="lastName" type="number" step='any' class="form-control">
+                <input [ngModel]="lastName" formControlName="lastName" type="text" class="form-control">
+              
+
+            </div>
+
+            <div class="form-group text-left">
+              <label for="lastName">password</label>
+
+              
+                <input [ngModel]="password" formControlName="password" type="password" class="form-control">
               
 
             </div>
@@ -141,7 +159,7 @@
               <label for="assetWorth">assetWorth</label>
 
               
-                  <textarea [ngModel]="assetWorth" formControlName="assetWorth" class="form-control" rows="3"></textarea>
+                  <textarea [ngModel]="assetWorth" formControlName="assetWorth" type="number" class="form-control" rows="3"></textarea>
               
 
             </div>
@@ -159,7 +177,7 @@
               <label for="walletAmt">walletAmt</label>
 
               
-                <input [ngModel]="walletAmt"formControlName="walletAmt" type="text" class="form-control">
+                <input [ngModel]="walletAmt"formControlName="walletAmt" type="number" class="form-control">
               
 
             </div>
@@ -240,6 +258,7 @@
                 <th class="info">rating</th>
             
                 <th class="info">walletAmt</th>
+                <th class="info">password</th>
             
           </tr>
         </thead>
@@ -260,6 +279,8 @@
                 <td>{{asset.rating}}</td>
             
                 <td>{{asset.walletAmt}}</td>
+
+                <td>*********</td>
             
             <td>
               <button (click)="getForm(asset.id);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>

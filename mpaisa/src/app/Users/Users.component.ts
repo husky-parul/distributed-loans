@@ -31,6 +31,8 @@ export class UsersComponent implements OnInit {
       rating = new FormControl("", Validators.required);
   
       walletAmt = new FormControl("", Validators.required);
+
+      password = new FormControl("", Validators.required);
   
       
 
@@ -62,7 +64,8 @@ export class UsersComponent implements OnInit {
         
     
         
-          walletAmt:this.walletAmt
+          walletAmt:this.walletAmt,
+          password:this.password
         
     
         
@@ -128,7 +131,9 @@ export class UsersComponent implements OnInit {
         
       
         
-          "walletAmt":this.walletAmt.value
+          "walletAmt":this.walletAmt.value,
+
+          "password":this.password.value
         
       
     };
@@ -160,7 +165,8 @@ export class UsersComponent implements OnInit {
         
       
         
-          "walletAmt":null
+          "walletAmt":null,
+          "password":null
         
       
     });
@@ -196,7 +202,8 @@ export class UsersComponent implements OnInit {
         
       
         
-          "walletAmt":null 
+          "walletAmt":null,
+          "password":null
         
       
       });
@@ -247,11 +254,8 @@ export class UsersComponent implements OnInit {
         
           
             "rating":this.rating.value,
-        
-    
-        
-          
-            "walletAmt":this.walletAmt.value
+            "walletAmt":this.walletAmt.value,
+            "password":this.password.value
           
         
     
@@ -333,7 +337,8 @@ export class UsersComponent implements OnInit {
           
         
           
-            "walletAmt":null 
+            "walletAmt":null,
+            "password":null
           
         
       };
@@ -382,6 +387,12 @@ export class UsersComponent implements OnInit {
         }else{
           formObject.walletAmt = null;
         }
+       
+        if(result.password){
+          formObject.password = result.password;
+        }else{
+          formObject.password = null;
+        }
       
 
       this.myForm.setValue(formObject);
@@ -429,7 +440,8 @@ export class UsersComponent implements OnInit {
         
       
         
-          "walletAmt":null 
+          "walletAmt":null,
+          "password":null
         
       
       });

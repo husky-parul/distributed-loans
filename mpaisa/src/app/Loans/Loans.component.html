@@ -93,6 +93,16 @@
               
 
             </div>
+
+            <div class="form-group text-left">
+              <label for="payDay">payDay</label>
+
+              
+                  <input formControlName="payDay" class="form-control">
+
+              
+
+            </div>
           
 
 
@@ -201,6 +211,15 @@
               
 
             </div>
+
+            <div class="form-group text-left">
+              <label for="status">payDay</label>
+
+              
+                  <input [ngModel]="payDay" formControlName="payDay" class="form-control">
+              
+
+            </div>
           
 
 
@@ -213,7 +232,6 @@
     </div>
   </div>
 </div>
-
 
 
 <div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetModalLabel">
@@ -282,6 +300,7 @@
                 <th class="info">status</th>
             
               <th class="info">Actions</th>
+              <th class="info">Premium Pay Day</th>
           </tr>
         </thead>
         <tbody>
@@ -305,10 +324,10 @@
                 <td>{{asset.endDate}}</td>
             
                 <td>{{asset.status}}</td>
+                <td>{{asset.payDay}}</td>
             
             <td>
               <button (click)="getForm(asset.id);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>
-
               <button (click)="setId(asset.id);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAssetModal">Delete Asset</button>
             </td>
           </tr>

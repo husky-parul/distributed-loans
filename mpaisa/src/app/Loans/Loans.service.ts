@@ -37,4 +37,9 @@ export class LoansService {
       return this.dataService.delete(this.NAMESPACE, id);
     }
 
+    public payPremium(itemToUpdate: any): Observable<Loans> {
+      console.log('Pay: '+itemToUpdate);
+      return this.dataService.payPremium('PayPremuim', itemToUpdate);
+    }
+
 }

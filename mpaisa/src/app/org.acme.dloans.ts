@@ -11,6 +11,7 @@ import {Event} from './org.hyperledger.composer.system';
       assetWorth: number;
       rating: number;
       walletAmt: number;
+      password:string;
    }
    export class LegalAdvisor extends Participant {
       id: string;
@@ -29,6 +30,7 @@ import {Event} from './org.hyperledger.composer.system';
       startDate: Date;
       endDate: Date;
       status: LoanStatus;
+      payDay:Date;
    }
    export enum LoanStatus {
       ontrack,
